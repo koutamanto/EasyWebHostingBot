@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+  <title>KJunkie's Portfolio</title>
+  <style>
+  html, body {
+    height: 100%;
+    }
+  h1 {
+    font-size: 20vw;
+    font-weight: 100;
+    text-align:center;
+  }
+  h2 {
+    font-size:10vw;
+    font-weight: 300;
+    text-align:center;
+  }
+  .bg-skew {
+    background-color: white;
+    -webkit-transform: skew(0deg, -50deg);
+    transform: skew(0deg, -50deg);
+    padding: 200px 0;
+    margin-top: -25vh;;
+  }
+  nav,
+  .bg-skew,
+  nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    width: 60%;
+    -webkit-transform: skew(0deg, 50deg);
+    transform: skew(0deg, 50deg);
+  }
+  nav a,
+  .content a,
+  footer a {
+    -webkit-transition: .3s all;
+    transition: .3s all;
+  }
+  .content,
+  footer,
+  nav a {
+    color: #fff;
+  }
+  .content p {
+  font-weight: 300;
+  padding-top: 12px;
+}
+
+.content a {
+  font-weight: 400;
+  color: #fff;
+  padding: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.content a:hover {
+  background: #222;
+  color: #fff;
+}
+
+.content {
+  padding-top: 160px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+.background_test {
+    background: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
+}
+.fade{
+
+animation: fadeIn 5s ease 0.3s infinite alternate;
+
+}
+
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+
+0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
+}
+/*上からフェードイン*/
+.fade-in-top {
+   opacity: 0;
+   animation: fadein-top 1.5s .3s ease-out forwards;
+}
+@keyframes fadein-top {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/*下からフェードイン*/
+.fade-in-bottom {
+   opacity: 0;
+   animation: fadein-bottom 1.5s 0 ease-out forwards;
+}
+@keyframes fadein-bottom {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/*左からフェードイン*/
+.fade-in-left {
+   opacity: 0;
+   animation: fadein-left 1.5s 0 ease-out forwards;
+}
+@keyframes fadein-left {
+   0% {
+      opacity: 0;
+      transform: translateX(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+.name {
+  font-family: 'SF-Heavy';
+}
+
+.description {
+  font-family:'Noto Sans JP';
+}
+
+/*右からフェードイン*/
+.fade-in-right {
+   opacity: 0;
+   animation: fadein-right 1.5s 0 ease-out forwards;
+}
+@keyframes fadein-right {
+   0% {
+      opacity: 0;
+      transform: translateX(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+/* 上からフェードイン */
+.slide-top {
+	opacity: 0;
+	transform: translate(0, -20px);
+	transition: all 1s ease-out;
+ }
+
+/* 下からフェードイン */
+.slide-bottom {
+	opacity: 0;
+	transform: translate(0, 20px);
+	transition: all 1s ease-out;
+ }
+
+ /* 左からフェードイン */
+.slide-left {
+	opacity: 0;
+	transform: translate(-20px, 0);
+	transition: all 1s ease-out;
+ }
+
+/* 右からフェードイン */
+.slide-right {
+	opacity: 0;
+	transform: translate(20px, 0);
+	transition: all 1s ease-out;
+ }
+ h3 {
+   font-size: 10vw;
+   font-weight: bold;
+   font-family: 'SF-Heavy';
+ }
+ @font-face {
+    font-family: 'SF-Ultralight';
+    src: url(Font/SFProDisplay-Ultralight.ttf);
+}
+@font-face{
+    font-family: 'SF-TextLight';
+    src: url(Font/SFProText-Light.ttf);
+}
+@font-face {
+    font-family: 'SF-Bold';
+    src:url(Font/SFProText-Bold.ttf);
+}
+@font-face {
+    font-family: 'SF-Heavy';
+    src: url(Font/SFProText-Heavy.ttf)
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #222;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #222;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+  animation: move 1.3s infinite;
+  margin: -3px;
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px) rotate(45deg);
+  }
+}
+.hr-text {
+	line-height: 1em;
+	position: relative;
+	outline: 0;
+	border: 0;
+	color: black;
+	text-align: center;
+	height: 1.5em;
+	opacity: .5;
+}
+.hr-text:before {
+	content: '';
+	background: -webkit-linear-gradient(left, transparent, #818078, transparent);
+	background: linear-gradient(to right, transparent, #818078, transparent);
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: 1px;
+}
+.hr-text:after {
+	content: attr(data-content);
+	position: relative;
+	display: inline-block;
+	color: black;
+	padding: 0 .5em;
+	line-height: 1.5em;
+	color: #7952a7;
+	background-color: #fcfcfa;
+}
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="bg-skew w-100">
+        <div class="container content">
+          <div class="row" style="padding-top: 35vh;">
+            <h1 class="text-dark fade">KJunkie</h1>
+            <h2 class="text-dark slide-left show">勝又巧太</h2>
+            <h2 class="text-dark slide-right show">Programmer</h2>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <h1 class="text-info text-center fade">開発実績</h1>
+  </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <div class="card">
+      <img src="https://i.ibb.co/52sJPTb/32-D10-C3-A-AD7-A-42-FB-80-B4-A6-AF20-B61-FC5.png" alt="" class="d-block w-100" >
+      <div class="card-body">
+        <h5 class="card-title display-3 name">Zodiac</h5>
+        <p class="card-text display-4 description">
+          LINE BotであるZodiacは、2020年に開発がスタートされた多機能Botです。様々な先進的な機能を備えた次世代のLINE Botです。PythonとLINE Messaging API、JSONやその他様々な技術を用いた100個近い機能を搭載しています。
+        </p> 
+        <a href="https://help.zodiac-line.work" class="btn btn-dark">
+          <h5 class="display-4">
+            使ってみる
+          </h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 30vh;">
+    <div class="card">
+      <img src="https://2.bp.blogspot.com/-GLV-igpE9qg/VY4Wp8JFbQI/AAAAAAAAusg/ZeswTsxguk0/s800/keijiban.png" alt="" class="d-block w-100" >
+      <div class="card-body">
+        <h5 class="card-title display-3 name">Zodiac BBS</h5>
+        <p class="card-text display-4 description">
+          掲示板であるZodiac BBSは、2021年8/18に公開されたシンプルな掲示板ページです。Pythonを主に用いて数日で開発しました。
+        </p> 
+        <a href="https://bbs.zodiac-line.work" class="btn btn-dark">
+          <h5 class="display-4">
+            詳しく見る
+          </h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 30vh;">
+    <div class="card">
+      <img src="https://ak4.picdn.net/shutterstock/videos/34269994/thumb/1.jpg" alt="" class="d-block w-100" >
+      <div class="card-body">
+        <h5 class="card-title display-3 name">Earth Saver</h5>
+        <p class="card-text display-4 description">
+          Zodiacに搭載された機能の一つであるEarth Saverは、地震速報をLINEのトーク上に通知・警告します。Zodiacを追加し、<br>「地震情報を受け取る」と話しかけるだけで利用できます。
+        </p> 
+        <a href="https://help.zodiac-line.work" class="btn btn-dark">
+          <h5 class="display-4">
+            使ってみる
+          </h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 30vh;">
+    <div class="card">
+      <img src="https://mikenekotiger.com/wp-content/uploads/2016/05/cc81fdb44afb5482dd6539e5a668d8ae_s.jpg" alt="" class="d-block w-100" >
+      <div class="card-body">
+        <h5 class="card-title display-3 name">タイムマシン</h5>
+        <p class="card-text display-4 description">
+          同じくZodiacに搭載されたタイムマシン機能は、Internet Wayback Machineを通して登録された過去のWebページを閲覧できます。
+        </p> 
+        <a href="https://help.zodiac-line.work" class="btn btn-dark">
+          <h5 class="display-4">
+            使ってみる
+          </h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 30vh;">
+    <div class="card">
+      <img src="https://pbs.twimg.com/media/EdGjR_TWAAACcR8.png" alt="" class="d-block w-100" >
+      <div class="card-body">
+        <h5 class="card-title display-3 name">LINE Bot Builder</h5>
+        <p class="card-text display-4 description">
+          LINE Bot Builder(通称LLB)は、LINE公式アカウントの生成を自動で行います。アカウントやプログラムの作成からHerokuへのデプロイまでをコマンド一つで行えます。
+        </p> 
+        <a href="https://line.me/ti/p/r9WaMzH4K0" class="btn btn-dark">
+          <h5 class="display-4">
+            詳しく聞く(開発者のLINE)
+          </h5>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <h1 class="text-info text-center fade">その他の開発実績</h1>
+  </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <h2 class="display-3" style="margin-top: 5vh;">
+      LINE Bot 「Zodiac」
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      LINE Botとその管理ツール
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      サイバー鬼ごっこアプリ<br>「Tag It」
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      PayPal経由での課金・決済機能(Zodiac)
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      チャットWebアプリ
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      オリジナル質問箱
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      スクレイピング
+    </h2>
+    <h2 class="display-3" style="margin-top: 5vh;">
+      etc.
+    </h2>
+  </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <h1 class="text-dark text-center fade">Skills</h1>
+      <div class="col">
+        <h2 class="display-2">
+          <hr class="hr-text" data-content="Coding">
+        </h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><h2 class="display-3">Languages</h2></th>
+              <th scope="col"><h2 class="display-3">FrameWorks</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <h2 class="display-3">
+                  Python
+                </h3>
+              </td>
+              <td>
+                <h2 class="display-4">Flask Requests LINE Bot SDK etc.</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="display-3">
+                  JavaScript
+                </h3>
+              </td>
+              <td>
+                <h2 class="display-4">JQuery Ajax DOM etc.</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="display-3">
+                  HTML/CSS
+                </h3>
+              </td>
+              <td>
+                <h2 class="display-4">Flask Requests LINE Bot SDK etc.</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 class="display-3">
+                  Python
+                </h3>
+              </td>
+              <td>
+                <h2 class="display-4">BootStrap Jinja2(Python)</h2>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          <h2 class="display-2">
+            <hr class="hr-text" data-content="Other">
+          </h2>
+          <h2 class="display-3">
+            Linux/Ubuntu CUI
+          </h3>
+          <h2 class="display-3">
+            Git/GitHub
+          </h3>
+          <h2 class="display-3">
+            Heroku
+          </h3>
+          <h2 class="display-3">
+            etc.
+          </h3>
+        </div>
+      </div>
+  <div class="row-fluid" style="padding-top: 50vh;">
+    <h1 class="text-dark text-center fade">Projects</h1>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="https://help.zodiac-line.work"><img class="d-block w-100" src="https://i.ibb.co/52sJPTb/32-D10-C3-A-AD7-A-42-FB-80-B4-A6-AF20-B61-FC5.png" alt="First slide"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h4 class="text-dark" style="font-size: 200%;">登録者2800人超えの超多機能LINE Bot。無料で使用でき、様々な機能を備えている。</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://thejunkies.herokuapp.com"><img class="d-block w-100" src="https://thejunkies.herokuapp.com/static/img/logo.png" alt="Second slide"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h4 class="text-dark" style="font-size: 200%;">所属するZeroというチームで共同で開発しているWebサービスであるZett。電車やバスの乗り換え案内から、天気まで、幅広い機能を搭載する予定。(開発中)</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="https://cybertag.herokuapp.com"><img class="d-block w-100" src="https://cybertag.herokuapp.com/static/images/horse.png" alt="Second slide"></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h4 class="text-dark" style="font-size: 200%;">子供の頃に誰しもが遊んだことがある「鬼ごっこ」をサイバーかつモダンに仕上げたゲーム</h4>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="row-fluid" style="padding-top: 10vh;">
+    <h1 class="text-dark text-center fade">Contact</h1>
+    <a href="https://line.me/ti/p/r9WaMzH4K0"><h4 class="display-4 text-center" style="margin-top:auto;margin-bottom: auto;">お仕事のご相談はこちら</h4></a>
+    <div style="display:inline-flex;justify-content:center;">
+      <a href="https://line.me/ti/p/r9WaMzH4K0"><img src="https://img.icons8.com/bubbles/300/000000/line-me.png"/></a>
+      <a href="https://twitter.com/zodiac_bot_dev"><img src="https://img.icons8.com/bubbles/300/000000/twitter-circled.png"/></a>
+      <a href="mailto:kjunkiehack@gmail.com"><img src="https://img.icons8.com/bubbles/300/000000/apple-mail.png"/></a>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+     $(window).on('load scroll', function() {
+        var winScroll = $(window).scrollTop();
+        var winHeight = $(window).height();
+        var scrollPos = winScroll + (winHeight * 0.8);
+  
+        $(".show").each(function() {
+           if($(this).offset().top < scrollPos) {
+              $(this).css({opacity: 1, transform: 'translate(0, 0)'});
+           }
+        });
+     });
+  });
+    </script>
+</body>
+</html>
